@@ -1,0 +1,30 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>io.jeffcave.software-design-patterns</groupId>
+        <artifactId>solid-principles</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <name>Interface Segregation Principle</name>
+    <artifactId>interface-segregation</artifactId>
+    <packaging>nar</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.maven-nar</groupId>
+                <artifactId>nar-maven-plugin</artifactId>
+                <version>3.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <libraries>
+                        <library>
+                            <type>executable</type>
+                            <linkCPP>true</linkCPP>
+                        </library>
+                    </libraries>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
