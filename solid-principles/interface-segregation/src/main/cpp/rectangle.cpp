@@ -2,72 +2,49 @@
 #include <iostream>
 #include "rectangle.hpp"
 
-class HasArea {
-public:
-    virtual double getArea() = 0;
-};
+Rectangle::Rectangle(double length, double width): m_length(length), m_width(width) {}
 
-class Printable {
-public:
-    virtual void printInfo() = 0;
-};
+double Rectangle::getArea() {
+    return m_length * m_width;
+}
 
-class Rectangle : public HasArea, public Printable {
-protected:
-    double m_length;
-    double m_width;
-public:
-    Rectangle (double length, double width) : m_length(length) , m_width(width) {
-    }
+double Rectangle::getLength() {
+    return m_length;
+}
 
-    double getArea() {
-        return m_length * m_width;
-    }
+double Rectangle::getWidth() {
+    return m_width;
+}
 
-    double getLength() {
-        return m_length;
-    }
+void Rectangle::printInfo() {
+    std::cout << "RECTANGLE: " << m_length << "x" << m_width << std::endl;
+}
 
-    double getWidth() {
-        return m_width;
-    }
+void Rectangle::setLength(double length) {
+    m_length = length;
+}
 
-    void printInfo() {
-        std::cout << "RECTANGLE: " << m_length << "x" << m_width << std::endl;
-    }
+void Rectangle::setWidth(double width) {
+    m_width = width;
+}
 
-    void setLength(double length) {
-        m_length = length;
-    }
+Square::Square (double size) : m_size(size) {}
 
-    void setWidth(double width) {
-        m_width = width;
-    }
-};
+double Square::getArea() {
+    return m_size * m_size;
+}
 
-class Square: public HasArea, public Printable {
-protected:
-    double m_size;
-public:
-    Square (double size) : m_size(size) {
-    }
+double Square::getSize() {
+    return m_size;
+}
 
-    double getArea() {
-        return m_size * m_size;
-    }
+void Square::printInfo() {
+    std::cout << "SQUARE: " << m_size << "x" << m_size << std::endl;
+}
 
-    double getSize() {
-        return m_size;
-    }
-
-    void printInfo() {
-        std::cout << "SQUARE: " << m_size << "x" << m_size << std::endl;
-    }
-
-    void setSize(double size) {
-        m_size = size;
-    }
-};
+void Square::setSize(double size) {
+    m_size = size;
+}
 
 int main(int argc, char* argv[]) {
     Rectangle rect(2.0, 3.4);
@@ -82,5 +59,10 @@ int main(int argc, char* argv[]) {
     s->printInfo();
     HasArea* a;
     a = &rect;
+    std::cout << "AREA: " << a->getArea() << std::endl;
+
+    s = &square;
+    s->printInfo();
+    a = &square;
     std::cout << "AREA: " << a->getArea() << std::endl;
 }
