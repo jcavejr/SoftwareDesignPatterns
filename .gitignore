@@ -3,3 +3,4 @@ target/
 CMakeFiles/
 CMakeCache.txt
 *.cmake
+build/
