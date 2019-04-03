@@ -23,6 +23,20 @@
                             <linkCPP>true</linkCPP>
                         </library>
                     </libraries>
+                    <cpp>
+                        <name>g++</name>
+                        <includePaths>
+                            <includePath>
+                                <path>/usr/local/Cellar/boost/1.69.0/include</path>
+                                <includes>
+                                    <include>boost/test/included/unit_test.hpp</include>
+                                </includes>
+                            </includePath>
+                        </includePaths>
+                    </cpp>
+                    <linker>
+                        <name>g++</name>
+                    </linker>
                 </configuration>
             </plugin>
         </plugins>
