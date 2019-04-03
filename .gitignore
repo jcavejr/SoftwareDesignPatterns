@@ -1,2 +1,5 @@
 target/
 .vscode/
+CMakeFiles/
+CMakeCache.txt
+*.cmake
