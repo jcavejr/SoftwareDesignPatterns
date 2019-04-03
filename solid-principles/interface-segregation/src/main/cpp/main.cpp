@@ -4,7 +4,7 @@
 #include "Printable.hpp"
 #include "Rectangle.hpp"
 #include "Square.hpp"
-/*
+
 int main(int argc, char* argv[]) {
     Rectangle rect(2.0, 3.4);
     rect.printInfo();
@@ -25,4 +25,3 @@ int main(int argc, char* argv[]) {
     a = &square;
     std::cout << "AREA: " << a->getArea() << std::endl;
 }
-*/
